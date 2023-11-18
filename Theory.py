@@ -9,15 +9,15 @@ FINAL FUNCTION:
 CNN:
     -takes advantage of correlation between two search boxes* which are closer to each other in image,
 
-    -filter (aka kernel, convolution), compute dot product between input(r1) and kernel(r2) = r3, add bias to result
-     r3 + bias = r4, put this result into feature map(r5), after this move kernel by some pixels(stride).
+    -filter (aka kernel, convolution, initially some random values), compute dot product between input(r1) and kernel(r2) = r3, 
+    add bias to result r3 + bias = r4, put this result into feature map(r5), after this move kernel by some pixels(stride).
 
     -pass feature map(r5) to activation function, apply filter(which does pooling, moves in such a way that 
      it does not overlap itself) to feature map = r6,
      
     -now use r6 in normal neural network.
     
-RNN:
+Recurrent NN:
     -different amount of input value, has feedback loops(takes past into consideration), weights and bias are shared 
      across every input.
      
@@ -44,6 +44,15 @@ RNN:
 
         --input(LTM, STM, input1) --LSTM model--> input(updated(LTM, STM), input2), unroll --LSTM model--> .. ans so on
 
-        
+BATCH NORMALIZATION:
+    -standardization(mean=0, variance=(0,1)) --> scale and add offset
+    -BN(x) = scale * ((x - mean) / std.deviation) + offset
 
+DEGRADATION PROBLEM:
+    -ex, suppose there are x + y layers, input of x is identical to input of y this is the problem with shallower networks.
+
+GAN:
+    -two models(generator and discriminator) compete with each other and learn patterns in input data
+    -generator creates fake data to be trained on the discriminator
+    -discriminator decides whether the data is from real or not with probabilitites.
 '''

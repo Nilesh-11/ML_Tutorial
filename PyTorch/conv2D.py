@@ -17,12 +17,34 @@ torch.nn.Conv2d(in_channels,
                 padding_mode='zeros', 
                 device=None, dtype=None)
 
-in_channels:    The input to the Conv2d layer is a 4D tensor representing a batch of images. 
-                
-    The dimensions are [batch_size, channels, height, width].
-    
+in_channels:    channels(channels is defined below)
+ 
+    The dimensions of input [batch_size, channels, height, width].
     batch_size:         The number of images in the batch.
     channels:           The number of channels in the input image. For grayscale images, this is 1. For color images (RGB), this is 3.
     height and width:   The spatial dimensions of the input image.
 
+'''
+
+'''
+torch.nn.BatchNorm2d(num_features, 
+                     eps=1e-05, 
+                     momentum=0.1, 
+                     affine=True, 
+                     track_running_stats=True, 
+                     device=None, 
+                     dtype=None)
+'''
+
+'''
+LAUNCH TENSORBOARD:
+
+    # Initialize the model and TensorBoard writer
+    model = BasicBlock(in_planes=3, planes=64)
+    dummy_input = torch.randn(1, 3, 224, 224)  # Create a dummy input for visualization
+    with SummaryWriter(comment='classname') as writer:
+        writer.add_graph(model, dummy_input)
+
+    # Run your script and then launch TensorBoard using the command:
+    # tensorboard --logdir=runs
 '''
